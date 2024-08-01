@@ -3,8 +3,8 @@
 SELECT 
   "Couriers"."login", 
   count("inDelivery") 
-FROM "Orders" 
-  INNER JOIN "Couriers" on "Couriers"."id" = "Orders"."courierId" 
+FROM "Couriers" 
+  INNER JOIN "Orders" on "Couriers"."id" = "Orders"."courierId" 
 WHERE "inDelivery" = true 
 GROUP BY "Couriers"."login";
 
